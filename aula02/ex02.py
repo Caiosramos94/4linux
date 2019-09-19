@@ -1,15 +1,41 @@
+numero1 = float(input("Digite o primeiro numero:"))
+numero2 = float(input("Digite o segundo numero:"))
+print("1- soma")
+print("2- Subtracao")
+print("3- divisao")
+print("4- multiplicacao")
+print("5- sair")
+opcao = int(input("digite a opcao que deseja:"))
+if opcao == 1:
+    soma = numero1 + numero2
+    print("o resultado da operacao e: {0.2f} + {1.2f} = {2.2f}".format(numero1,numero2,soma))
+elif opcao == 2:
+    subtracao = numero1 - numero2
+    print("o resultado da operacao e: {} - {} = {}".format(numero1,numero2,subtracao))
+elif opcao == 3:
+    divisao = numero1 / numero2
+    print("o resultado da operacao e: {} / {} = {}".format(numero1,numero2,divisao))    
+elif opcao == 4:
+    multiplicacao = numero1 * numero2
+    print("o resultado da operacao e: {} * {} = {}".format(numero1,numero2,multiplicacao))    
+else:
+    print("obrigado")
+exit()
+
+
+
+
+
+
+
+
+
 # exercicio com range
 for numero in range(7):
     print(numero)
 
 
     
-
-
-
-
-
-
 #exercicio com while - looping calculadora.
 while True:
     numero1 = float(input("Digite o primeiro numero:"))
@@ -133,7 +159,7 @@ print("5- sair")
 opcao = int(input("digite a opcao que deseja:"))
 if opcao == 1:
     soma = numero1 + numero2
-    print("o resultado da operacao e: {} + {} = {}".format(numero1,numero2,soma))
+    print("o resultado da operacao e: {0.2f} + {1.2f} = {2.2f}".format(numero1,numero2,soma))
 elif opcao == 2:
     subtracao = numero1 - numero2
     print("o resultado da operacao e: {} - {} = {}".format(numero1,numero2,subtracao))
