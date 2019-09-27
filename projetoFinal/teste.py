@@ -58,30 +58,19 @@ class CadastroUsuario:
        
         dic["nome_pessoa"] = input("Digite o nome do usuário: ")
         with self.conexao.cursor() as cursor:
-            SQL = "SELECT * FROM funcionario WHERE  nome_pessoa LIKE '%{}%'".format("nome_pessoa")
+            SQL = "SELECT * FROM funcionario WHERE  nome_pessoa LIKE '%{}%'".format(dic["nome_pessoa"])
             cursor.execute(SQL)
             for linha in cursor:
+                print("-----------------------------------------------------")
+                print("ID :", linha["id_pessoa"])
                 print("nome:", linha["nome_pessoa"])
+                print("cpf:", linha["cpf_pessoa"])
+                print("endereco:", linha["endereco_pessoa"])
+                print("idade:", linha["idade_pessoa"])
+                print("telefone:", linha["telefone_pessoa"])
+               
                 
-      def atualizaRegistro (self):
-        with self.conexao.cursor() as cursor:
-            idade = input("Informe a idade:")
-            id_pessoa = input("Informe o ID: ")
-            
-            SQL = "UPDATE pessoa SET idade_pessoa = {} WHERE id_pessoa = {}".format(idade, id_pessoa)
-            
-            cursor.execute(SQL)
-            self.conexao.commit()
-            
-    def removeRegistro (self):
-        with self.conexao.cursor() as cursor:
-            id_pessoa = input("Informe o ID: ")
-            
-            SQL = "DELETE FROM pessoa WHERE id_pessoa = {}".format(id_pessoa)
-            
-            cursor.execute(SQL)
-            self.conexao.commit()           
-            
+      
 
             
             
